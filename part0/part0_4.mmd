@@ -1,0 +1,48 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server ->> browser: HTML Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server ->> browser: CSS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server ->> browser: JS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server ->> browser: JSON Files [{"content": "-", "date": "2025-02-10T06:40:26.224Z"}...]
+    deactivate server
+
+    Note right of browser: the browser submit the form to the server which is then redirected back to the notes
+    browser ->> server: POST: https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server ->> browser: 302 Redirect to the "/exampleapp/notes"
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server ->> browser: HTML Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server ->> browser: CSS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server ->> browser: JS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server ->> browser: JSON Files [{"content": "-", "date": "2025-02-10T06:40:26.224Z"}...]
+    deactivate server
