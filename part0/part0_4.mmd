@@ -22,7 +22,7 @@ sequenceDiagram
     server ->> browser: JSON Files [{"content": "-", "date": "2025-02-10T06:40:26.224Z"}...]
     deactivate server
 
-    Note right of browser: the browser submit the form to the server which is then redirected back to the notes
+    Note right of browser: the browser submit the form to the server which then redirect back to notes causing 3 HTTPS request.
     browser ->> server: POST: https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
     server ->> browser: 302 Redirect to the "/exampleapp/notes"
