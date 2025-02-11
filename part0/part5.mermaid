@@ -18,7 +18,7 @@ sequenceDiagram
 
     browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server ->> browser: JSON [{"content": "test4", "date": "2025-02-10T21:57:55.476Z"}",...]
+    server ->> browser: JSON [{"content": "test4", "date": "2025-02-10T21:57:55.476Z"},...]
     deactivate server
 
     Note right of browser: When the browser submit the form the JS stops the default handling of form submition, and sends data to the server after updating the notes list.  
