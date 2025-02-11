@@ -20,9 +20,3 @@ sequenceDiagram
     activate server
     server ->> browser: JSON [{"content": "test4", "date": "2025-02-10T21:57:55.476Z"},...]
     deactivate server
-
-    Note right of browser: When the browser submit the form the JS stops the default handling of form submition, and sends data to the server after updating the notes list.  
-    browser ->> server: POST: https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-    activate server
-    server ->> browser:     [{content: "", date: "2025-02-11T13:06:34.975Z"},...]
-    Note right of browser: The browser will leave the server open for the upcoming data to be received.
