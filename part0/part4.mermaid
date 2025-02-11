@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: The Browser Submit POST request to the server.
+    browser ->> server: POST: https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server ->> browser: 302 Redirect to the "/exampleapp/notes"
+    deactivate server
+    Note right of browser: The server responds with 302 which is URL Redirect, forcing the browser to perform new HTTPS GET request to the location: "/exampleapp/notes" which means reloading the page. Re-fetching the pages files again.  
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server ->> browser: HTML Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server ->> browser: CSS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server ->> browser: JS Files
+    deactivate server
+
+    browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server ->> browser: JSON Files [{"content": "-", "date": "2025-02-10T06:40:26.224Z"}...]
+    deactivate server
