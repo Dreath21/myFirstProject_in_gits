@@ -7,7 +7,7 @@ sequenceDiagram
     activate server
     server ->> browser: 302 Redirect to the "/exampleapp/notes"
     deactivate server
-    Note right of browser: The server responds with 302 which is URL Redirect, forcing the browser to perform new HTTPS GET request to the location: "/exampleapp/notes" which means reloading the page. Re-fetching the pages files again.  
+    Note right of browser: The server responds with 302 which is URL Redirect, forcing the browser to perform new HTTPS GET request to the location: "/exampleapp/notes" which means reloading the page. Re-fetching the page files again.  
 
     browser ->> server: GET: https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
