@@ -17,7 +17,7 @@ const Statistics = ({ total, clicks, good, neutral, bad }) => {
       <tbody>
         <StatisticLine text="Good" args={good} />
         <StatisticLine text="Neutral" args={neutral} />
-        <StatisticLine text="bad" args={bad} />
+        <StatisticLine text="Bad" args={bad} />
         <StatisticLine text="All" args={good + neutral + bad} />
         <StatisticLine text="Average" args={(good - bad) / total} />
         <StatisticLine text="Positive" args={parseFloat(good / total) * 100 + " %"} />
