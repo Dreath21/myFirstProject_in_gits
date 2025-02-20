@@ -6,7 +6,7 @@ const Course = ({ course }) => {
       <>
         <Header name={name} />
         <Content parts={parts} />
-        Total of {parts.map(part => part.exercises).reduce((a, p) => a + p, 0)} exercises
+        <b>Total of {parts.map(part => part.exercises).reduce((a, p) => a + p, 0)} exercises</b>
       </>
     )
   }
