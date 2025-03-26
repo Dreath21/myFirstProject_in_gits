@@ -1,0 +1,18 @@
+h1{
+    color:green;
+    font-style: italic;
+}
+div.error, div.notify{
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+div.error{
+    color: red;
+    background-color: lightgray;
+}
+div.notify{
+    color: green;
+    background: #e7e7e7;
+}
